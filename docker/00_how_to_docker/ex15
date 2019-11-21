@@ -1,0 +1,1 @@
+docker run -d --link spawning-pool:db -p 8081:80 -e PMA_USER=root -e PMA_PASSWORD=Kerrigan --name roach-warden phpmyadmin/phpmyadmin

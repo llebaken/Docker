@@ -1,0 +1,4 @@
+docker swarm join-token worker  (Copy docker swar join --token.... (Copy The Whole command))
+docker-machine ssh Aiur
+(Paste command)
+exit

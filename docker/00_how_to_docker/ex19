@@ -1,0 +1,9 @@
+docker-machine ssh Char 
+cd ~                    
+pwd                     
+printf "from flask import Flask\napp = Flask(__name__)\n@app.route(\"/\")\ndef hello_world():\n\treturn \"<h1> Hello, World! </h1>\"" > app.py;
+exit shell
+docker run -dt -p 3000:3000 --mount type=bind,source=/home/docker,target=/root --name Abathur python:2-slim
+docker exec Abathur pip install Flask
+docker exec Abathur python root/app.py
+docker exec -e FLASK_APP=/root/app.py Abathur flask run --host=0.0.0.0 -p 3000  
